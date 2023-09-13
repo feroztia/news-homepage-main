@@ -1,0 +1,276 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+html {
+    position: relative;
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: 'Inter', sans-serif;
+    font-size: 15px;
+    font-weight: 400;
+    height: 100%;
+    width: 100%;
+    background-color: #fffdfa;
+}
+
+/* HEADER */
+
+header {
+    display: flex;
+    justify-content: space-around;
+    height: 85px;
+    padding-top: 25px;
+}
+
+.logo {
+    width: 50px;
+}
+
+.logo > img {
+    width: 100%;
+}
+
+nav ul > li {
+    display: inline-block;
+    padding: 0px 20px;
+    list-style-type: none;
+}
+
+nav ul > li a[href] {
+    text-decoration: none;
+}
+
+nav ul > li a[href]:hover {
+    color: #f15e50;
+}
+
+#open-menu, #close-menu {
+    display: none;
+}
+
+/* MAIN */
+main {
+    display: grid;
+    grid-template-areas:
+      "desktop__image desktop__image aside"
+      "Left__Article Right__Article aside";
+    gap: 1.5rem;
+    place-content: center;
+    width: 900px;
+    margin-inline: auto;
+}
+
+main > aside {
+    background-color: #00001a;
+}
+
+main > section {
+    grid-area: desktop__image;
+}
+
+section > img {
+    width: 100%;
+}
+
+.img-bg {
+    background-image: url(./assets/images/image-web-3-desktop.jpg);
+    background-size: cover;
+    background-position: center;
+    height: 250px;
+}
+
+article > h1 {
+    grid-area: Left__Article;
+    font-size: 2rem;
+    width: 300px;
+}
+
+  article > p {
+    grid-area: Right__Article;
+    line-height: 25px;
+}
+
+button {
+    padding: 10px 30px;
+    background-color: #f15e50;
+    color: #fffdfa;
+    border: none;
+    margin-top: 30px;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #00001a;
+}
+
+aside > .content {
+    grid-area: aside;
+}
+
+.content {
+    padding: 1rem 1.5rem;
+  }
+
+.border {
+    border: 1px solid #5d5f79;
+    margin-top: 20px;
+}
+
+.content > h4 {
+    color: #fffdfa;
+    font-size: 18px;
+}
+
+.content > h4:hover {
+    color: #e9ab53;
+    cursor: pointer;
+}
+
+.content > p {
+    color: #5d5f79;
+    padding-top: 10px;
+    line-height: 25px;
+}
+
+aside > h2 {
+    color: #e9ab53;
+    padding-top: 10px;
+    font-size: 30px;
+    padding-left: 1.5rem;
+}
+
+section > .box {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    margin-top: 60px;
+    gap: 1.5rem;
+    margin-bottom: 60px;
+    width: 900px;
+    margin-inline: auto;
+}
+
+section > .box {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    align-items: center;
+    gap: 1.5rem;
+}
+
+.box > img {
+    width: 100%;
+}
+
+.posts {
+    height: 100%;
+}
+
+.posts > h2 {
+    color: #c5c6ce;
+}
+
+.posts > h4 {
+    padding: 20px 0px;
+}
+
+.posts > h4:hover {
+    color: #f15e50;
+    cursor: pointer;
+}
+
+.posts > p {
+    line-height: 20px;
+    color: #c5c6ce;
+}
+
+/* MEDIA */
+
+  @media (max-width: 912px) {
+    main {
+      width: 800px;
+    }
+
+    section > .box {
+      width: 800px;
+    }
+  }
+
+  @media (max-width: 900px) and (orientation: portrait) {
+    main {
+      grid-template-areas:
+        "desktop__image"
+        "Left__Article"
+        "Right__Article"
+        "aside";
+      width: 300px;
+    }
+
+    .img-bg {
+      background-image: url("./assets/images/image-web-3-mobile.jpg");
+    }
+
+    .box:has([src="./assets/images/image-retro-pcs.jpg"]) {
+      grid-column-start: 1;
+      grid-row-start: 1;
+      grid-row-end: 2;
+      grid-column-end: 4;
+    }
+
+    .box:has([src="./assets/images/image-top-laptops.jpg"]) {
+      grid-column-start: 1;
+      grid-row-start: 2;
+      grid-row-end: 3;
+      grid-column-end: 4;
+    }
+    .box:has([src="./assets/images/image-gaming-growth.jpg"]) {
+      grid-column-start: 1;
+      grid-row-start: 3;
+      grid-row-end: 4;
+      grid-column-end: 4;
+    }
+
+    section > .box {
+      width: 300px;
+    }
+
+    img > #open-menu {
+      display: block;
+      width: 50px;
+      height: 35px;
+    }
+
+    img > #close-menu {
+      width: 40px;
+      height: 40px;
+    }
+
+    nav > ul {
+      position: fixed;
+      height: 100vh;
+      background-color: #2f3640;
+      top: 60px;
+      right: -100%;
+      transition: all 1s ease-out;
+    }
+
+    nav ul > li {
+      margin: 50px 0px;
+      line-height: 30px;
+      display: block;
+    }
+
+    nav > ul.show {
+      right: -30%;
+      height: 100%;
+      width: 100%;
+    }
+
+    ul > li a {
+      font-size: 20px;
+      color: #fffdfa;
+    }
+  }
