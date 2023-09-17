@@ -16,8 +16,8 @@ body {
     height: 100%;
     width: 100%;
     background-color: #fffdfa;
-    overflow-x: visible;
-    overflow-y: hidden;
+    overflow-x: hidden;
+    overflow-y: visible;
 }
 
 /* HEADER */
