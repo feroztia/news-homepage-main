@@ -15,6 +15,7 @@ body {
     font-weight: 400;
     height: 100%;
     width: 100%;
+    width: 1440px;
     background-color: #fffdfa;
     overflow-x: hidden;
     overflow-y: visible;
@@ -62,13 +63,17 @@ nav ul > li a:hover {
 
 /* MAIN */
 main {
-    width: 1060px;
+    width: 1440px;
     margin: 0 auto;
     padding: 20px;
+    display: flex;
+    flex-direction: row;
+    margin-left: 130px;
+    margin-bottom: 60px;
 }
 
 .left {
-    width: 650px;
+    width: 800px;
     gap: 20px;
 }
 
@@ -85,13 +90,13 @@ main {
     display: flex;
     flex-direction: space-between;
     gap: 10px;
-    width: 650px;
+    width: 800px;
     margin-top: 20px;
 }
 
 .bottom-left-left {
     width: 100%;
-    width: 300px;
+    width: 400px;
 }
 
 .bottom-left-left > h1 {
@@ -102,7 +107,7 @@ main {
 
 .bottom-left-right {
     width: 100%;
-    width: 300px;
+    width: 400px;
 }
 
 .blr-top > p {
@@ -132,12 +137,13 @@ button:hover {
 
 .right {
   background: #00001a;
-  width: 350px;
+  width: 400px;
   gap: 20px;
   padding: 20px;
+  margin-left: 30px;
 }
 
-.right > h2 {
+.new-box > h2 {
   color: #e9ab53;
   font-size: 2rem;
   margin: 0;
@@ -145,18 +151,20 @@ button:hover {
   padding-left: 20px;
 }
 
-.right > h1 {
+.new-box > h1 {
   font-size: 2rem;
   margin: 0;
 }
 
-.right > p {
+.new-box > p {
   line-height: 25px;
   margin: 0;
 }
 
 .content {
     padding: 1rem 1.5rem;
+    display: flex;
+    flex-direction: column;
   }
 
 .border {
@@ -183,28 +191,39 @@ button:hover {
 .box-posts {
   display: flex;
   justify-content: space-between;
-  width: 1060px;
+  width: 1400px;
   margin: 0 auto;
   align-items: center;
-  margin-bottom: 200px;
+  margin-bottom: 100px;
+  margin-left: 150px;
+}
+
+.box {
+    display: flex;
+    flex-direction: inline;
 }
 
 .box > img {
-    width: 100%;
-    height: auto;
+    height: 150px;
     width: 100px;
 }
 
 .posts {
     height: 100%;
+    display: flex;
+    flex-direction: column;
+    margin-left: 20px;
+    padding-right: 130px;
 }
 
 .posts > h2 {
     color: #c5c6ce;
+    font-size: 2rem;
 }
 
 .posts > h4 {
     padding: 20px 0px;
+    font-weight: 800;
 }
 
 .posts > h4:hover {
@@ -214,72 +233,102 @@ button:hover {
 
 .posts > p {
     line-height: 20px;
-    color: #c5c6ce;
+    color: #5d5f79;
 }
 
 /* MEDIA */
 @media (max-width: 768px) {
-  body {
-      overflow-x: hidden;
-      overflow-y: visible;
-  }
+    body {
+        font-size: 15px;
+        font-weight: 400;
+        height: 100%;
+        width: auto;
+        overflow-x: hidden;
+        overflow-y: visible;
+        align-items: center;
+        align-content: center;
+        margin: 15px;
+    }
 
-  main {
-      flex-direction: column;
-      align-items: center;
-      padding: 10px;
-  }
+    .logo {
+        width: 70px;
+    }
 
-  .left {
-      width: 100%;
-      margin: 0;
-  }
+    #open-menu {
+        display: inline;
+        width: 50px;
+    }
 
-  .right {
-      width: 100%;
-      margin-top: 20px;
-  }
+    nav > ul {
+        display: none;
+    }
 
-  .bottom-left {
-      flex-direction: column;
-      align-items: center;
-      gap: 15px;
-      margin-top: 20px;
-  }
+    header {
+        margin-bottom: 30px;
+    }
 
-  .bottom-left-left {
-      width: 100%;
-  }
+    main {
+        width: 100%;
+        flex-direction: column;
+        align-items: center;
+        margin: 0;
+        padding: 0;
+    }
 
-  .bottom-left-right {
-      width: 100%;
-  }
+    .left {
+        width: 100%;
+        margin: 0;
+        padding: 0;
+    }
 
-  .img-desktop {
-      display: none;
-  }
+    .right {
+        width: 100%;
+        margin: 0;
+        padding: 0;
+        margin-top: 40px;
+    }
 
-  .img-mobile {
-      display: block;
-      width: 100%;
-      width: 500px;
-      height: auto;
-  }
+    .bottom-left {
+        width: 100%;
+        flex-direction: column;
+        align-items: center;
+        gap: 15px;
+        margin-top: 20px;
+    }
 
-  .box-posts {
-      flex-direction: column;
-      align-items: center;
-      align-content: center;
-      margin-left: 50px;
-      margin-bottom: -50px;
-  }
+    .bottom-left-left {
+        width: 100%;
+    }
 
-  .box {
-      width: 100%;
-      margin-bottom: 20px;
-  }
+    .bottom-left-right {
+        width: 100%;
+    }
 
-  .posts > h4 {
-      padding: 10px 0;
-  }
-}
+    .img-desktop {
+        display: none;
+    }
+
+    .img-mobile {
+        display: block;
+        width: 100%;
+        height: auto;
+    }
+
+    .box-posts {
+        flex-direction: column;
+        align-items: center;
+        align-content: center;
+        margin-left: 50px;
+        margin-bottom: -50px;
+    }
+
+    .box {
+        width: 100%;
+        margin-bottom: 20px;
+        margin-top: 40px;
+    }
+
+    .posts > h4 {
+        padding: 10px 0;
+    }
+    }
